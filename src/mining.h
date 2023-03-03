@@ -33,13 +33,13 @@ void start_worker_mining(mining_worker_t *worker)
 
     TRY( cudaStreamAddCallback(worker->stream, worker_stream_callback, worker, 0) );
 
-#ifdef SHOW_MINING_TIME
-    float time;
-    // TRY( cudaEventElapsedTime(&time, startEvent, stopEvent) );
-    // TRY( cudaEventDestroy(&startEvent) );
-    // TRY( cudaEventDestroy(&stopEvent) );
-    LOG(" === mining time: %f\n", time);
-#endif
+// #ifdef SHOW_MINING_TIME
+//     float time;
+//     // TRY( cudaEventElapsedTime(&time, startEvent, stopEvent) );
+//     // TRY( cudaEventDestroy(&startEvent) );
+//     // TRY( cudaEventDestroy(&stopEvent) );
+//     // LOG(" === mining time: %f\n", time);
+// #endif
 }
 
 #endif // ALEPHIUM_MINING_H

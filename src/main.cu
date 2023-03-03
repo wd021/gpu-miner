@@ -298,6 +298,9 @@ void on_connect(uv_connect_t *req, int status)
     LOG("the server is connected %d %p\n", status, req);
 
     tcp = req->handle;
+
+    LOG("the server tcp %d %d\n", tcp, req);
+
     uv_read_start(req->handle, alloc_buffer, on_read);
 }
 
