@@ -262,7 +262,7 @@ void on_read(uv_stream_t *server, ssize_t nread, const uv_buf_t *buf)
 
     server_message_t *message = decode_buf(buf, nread);
 
-    LOGGER("server message kind: %d\n", message)
+    LOGGER("server message kind: %d\n", message);
 
     if (message)
     {
