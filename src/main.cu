@@ -256,13 +256,13 @@ void on_read(uv_stream_t *server, ssize_t nread, const uv_buf_t *buf)
 
     if (nread == 0)
     {
-        LOGGER("nread 0\n");
+        LOGERR("nread 0\n");
         return;
     }
 
     server_message_t *message = decode_buf(buf, nread);
 
-    LOGGER("server message kind: %d\n", message);
+    LOGERR("server message kind: %d\n", message);
 
     if (message)
     {

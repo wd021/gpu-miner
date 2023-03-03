@@ -35,9 +35,9 @@ void start_worker_mining(mining_worker_t *worker)
 
 #ifdef SHOW_MINING_TIME
     float time;
-    TRY( cudaEventElapsedTime(&time, startEvent, stopEvent) );
-    TRY( cudaEventDestroy(&startEvent) );
-    TRY( cudaEventDestroy(&stopEvent) );
+    // TRY( cudaEventElapsedTime(&time, startEvent, stopEvent) );
+    // TRY( cudaEventDestroy(&startEvent) );
+    // TRY( cudaEventDestroy(&stopEvent) );
     LOG(" === mining time: %f\n", time);
 #endif
 }
