@@ -35,7 +35,7 @@ std::atomic<uint64_t> total_mining_count;
 std::atomic<uint64_t> device_mining_count[max_gpu_num];
 bool use_device[max_gpu_num];
 
-int port = 10973;
+int port = 9033;
 char broker_ip[16];
 uv_timer_t reconnect_timer;
 uv_tcp_t *uv_socket;
@@ -256,10 +256,14 @@ void on_read(uv_stream_t *server, ssize_t nread, const uv_buf_t *buf)
 
     if (nread == 0)
     {
+        LOGGER("nread 0\n");
         return;
     }
 
     server_message_t *message = decode_buf(buf, nread);
+
+    LOGGER("server message kind: %d\n", message)
+
     if (message)
     {
         switch (message->kind)

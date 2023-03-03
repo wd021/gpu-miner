@@ -4,7 +4,7 @@
 #include "blake3.cu"
 #include "log.h"
 
-//#define SHOW_MINING_TIME  1
+#define SHOW_MINING_TIME  1
 
 void worker_stream_callback(cudaStream_t stream, cudaError_t status, void *data);
 
